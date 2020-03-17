@@ -1,0 +1,21 @@
+{
+  "name": "PracticaPhaserCreacion",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@popperjs/core": "^2.1.1",
+    "boostrap": "^2.0.0",
+    "bootstrap": "^4.4.1",
+    "express": "^4.17.1",
+    "expresss": "0.0.0",
+    "jquery": "^3.4.1",
+    "phaser": "^3.22.0"
+  }
+}
