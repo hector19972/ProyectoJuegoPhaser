@@ -5,7 +5,7 @@ class SceneA extends Phaser.Scene {
 
     preload() {
         this.load.image('sky', 'assets/sky.png');
-        this.load.image('ground', 'assets/platform.png');
+        this.load.image('ground', 'assets/plataformas.png');
         this.load.image('star', 'assets/moneda1.png');
         this.load.image('bomb', 'assets/enemigo.png');
         this.load.image('moneda', 'assets/moneda2.png');
@@ -118,7 +118,7 @@ class SceneA extends Phaser.Scene {
         bombs = this.physics.add.group();
 
         //  The score
-        scoreText = this.add.text(16, 16, 'score: 0', { fontFamily: 'font1', fontSize: '32px', fill: '#000' });
+        scoreText = this.add.text(16, 16, 'score: 0', { fontFamily: 'font1', fontSize: '32px', fill: '#fff' });
         vidasText = this.add.text(16, 48, 'vidas: 3', { fontFamily: 'font1', fontSize: '32px', fill: '#CC0000' });
 
         //  Collide the player and the stars with the platforms
@@ -155,7 +155,7 @@ class SceneA extends Phaser.Scene {
                 this.physics.resume();
             }
         }
-        if(score>50){
+        if(score>500){
             Mfondo.stop();
             this.scene.start('SceneB');
             

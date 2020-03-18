@@ -5,7 +5,7 @@ class SceneB extends Phaser.Scene {
 
     preload() {
         this.load.image('sky', 'assets/sky.png');
-        this.load.image('ground', 'assets/platform.png');
+        this.load.image('ground', 'assets/plataformas.png');
         this.load.image('star', 'assets/moneda1.png');
         this.load.image('bomb', 'assets/enemigo.png');
         this.load.image('moneda', 'assets/moneda2.png');
@@ -47,9 +47,10 @@ class SceneB extends Phaser.Scene {
         platforms.create(400, 568, 'ground').setScale(2).refreshBody();
 
         //  Now let's create some ledges
-        platforms.create(600, 400, 'ground');
-        platforms.create(50, 250, 'ground');
-        platforms.create(750, 220, 'ground');
+        platforms.create(650, 300, 'ground');
+        platforms.create(100, 250, 'ground');
+        platforms.create(770, 400, 'ground');
+        platforms.create(100, 50, 'ground');
 
         // The player and its settings
         player = this.physics.add.sprite(100, 450, 'dude');
@@ -129,7 +130,7 @@ class SceneB extends Phaser.Scene {
         });
 
         //  The score
-        scoreText = this.add.text(16, 16, 'score: '+score, { fontFamily: 'font1', fontSize: '32px', fill: '#000' });
+        scoreText = this.add.text(16, 16, 'score: '+score, { fontFamily: 'font1', fontSize: '32px', fill: '#fff' });
         vidasText = this.add.text(16, 48, 'vidas: '+vidas, { fontFamily: 'font1', fontSize: '32px', fill: '#CC0000' });
 
         //  Collide the player and the stars with the platforms
