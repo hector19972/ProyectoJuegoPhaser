@@ -26,7 +26,7 @@ class SceneA extends Phaser.Scene {
     create() {
         //Inicialisando las variables importantes con cade nueva llamada:
         score = 0;
-        vidas = 0;
+        vidas = 3;
         gameOver = false;
         //  A simple background for our game
         this.add.image(400, 300, 'sky');
