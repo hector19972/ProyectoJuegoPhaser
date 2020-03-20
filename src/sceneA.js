@@ -51,6 +51,7 @@ class SceneA extends Phaser.Scene {
         platforms.create(600, 400, 'ground');
         platforms.create(50, 250, 'ground');
         platforms.create(750, 220, 'ground');
+        platforms.create(400, 100, 'ground').setScale(.5).refreshBody();
 
         // The player and its settings
         player = this.physics.add.sprite(100, 450, 'dude');
@@ -87,7 +88,7 @@ class SceneA extends Phaser.Scene {
         stars = this.physics.add.group({
             key: 'star',
             repeat: 11,
-            setXY: { x: 12, y: 0, stepX: 70 }
+            setXY: { x: 12,y: Phaser.Math.Between(5, 100), stepX: 70  }
         });
 
         monedas2 = this.physics.add.group({
@@ -102,6 +103,9 @@ class SceneA extends Phaser.Scene {
 
             //  Give each star a slightly different bounce
             child.setBounceY(Phaser.Math.FloatBetween(0.4, 0.8));
+            child.setBounceX(Phaser.Math.FloatBetween(0.4, 0.8));
+            
+            child.setCollideWorldBounds(true);
 
         });
         monedas2.children.iterate(function (child) {
@@ -219,11 +223,13 @@ function collectStar(player, star) {
             //  A new batch of stars to collect
             monedas2.children.iterate(function (child) {
                 child.enableBody(true, child.x, 0, true, true);
+                
             });
         }
         stars.children.iterate(function (child) {
 
             child.enableBody(true, child.x, 0, true, true);
+            child.setVelocity(Phaser.Math.Between(-200, 200), 20);
 
         });
 
